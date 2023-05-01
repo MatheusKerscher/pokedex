@@ -1,0 +1,208 @@
+<div class="container">
+  <div class="w-100 row" *ngIf="pokemons.length > 0">
+    <ng-container *ngFor="let p of pokemons">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
+        <ng-container [ngSwitch]="p?.types?.[0]?.type?.name">
+          <app-card-pokemon
+            *ngSwitchCase="'normal'"
+            [classForPokemonType]="'type-normal'"
+            [pokemonName]="p.name"
+            [height]="p.height"
+            [weight]="p.weight"
+            [types]="p.types"
+            [imgPokemonUrl]="p.sprites?.other?.dream_world?.front_default! || p.sprites?.front_default!"
+          ></app-card-pokemon>
+
+          <app-card-pokemon
+            *ngSwitchCase="'fighting'"
+            [classForPokemonType]="'type-fighting'"
+            [pokemonName]="p.name"
+            [height]="p.height"
+            [weight]="p.weight"
+            [types]="p.types"
+            [imgPokemonUrl]="p.sprites?.other?.dream_world?.front_default! || p.sprites?.front_default!"
+          ></app-card-pokemon>
+
+          <app-card-pokemon
+            *ngSwitchCase="'flying'"
+            [classForPokemonType]="'type-flying'"
+            [pokemonName]="p.name"
+            [height]="p.height"
+            [weight]="p.weight"
+            [types]="p.types"
+            [imgPokemonUrl]="p.sprites?.other?.dream_world?.front_default! || p.sprites?.front_default!"
+          ></app-card-pokemon>
+
+          <app-card-pokemon
+            *ngSwitchCase="'poison'"
+            [classForPokemonType]="'type-poison'"
+            [pokemonName]="p.name"
+            [height]="p.height"
+            [weight]="p.weight"
+            [types]="p.types"
+            [imgPokemonUrl]="p.sprites?.other?.dream_world?.front_default! || p.sprites?.front_default!"
+          ></app-card-pokemon>
+
+          <app-card-pokemon
+            *ngSwitchCase="'ground'"
+            [classForPokemonType]="'type-ground'"
+            [pokemonName]="p.name"
+            [height]="p.height"
+            [weight]="p.weight"
+            [types]="p.types"
+            [imgPokemonUrl]="p.sprites?.other?.dream_world?.front_default! || p.sprites?.front_default!"
+          ></app-card-pokemon>
+
+          <app-card-pokemon
+            *ngSwitchCase="'rock'"
+            [classForPokemonType]="'type-rock'"
+            [pokemonName]="p.name"
+            [height]="p.height"
+            [weight]="p.weight"
+            [types]="p.types"
+            [imgPokemonUrl]="p.sprites?.other?.dream_world?.front_default! || p.sprites?.front_default!"
+          ></app-card-pokemon>
+
+          <app-card-pokemon
+            *ngSwitchCase="'bug'"
+            [classForPokemonType]="'type-bug'"
+            [pokemonName]="p.name"
+            [height]="p.height"
+            [weight]="p.weight"
+            [types]="p.types"
+            [imgPokemonUrl]="p.sprites?.other?.dream_world?.front_default! || p.sprites?.front_default!"
+          ></app-card-pokemon>
+
+          <app-card-pokemon
+            *ngSwitchCase="'ghost'"
+            [classForPokemonType]="'type-ghost'"
+            [pokemonName]="p.name"
+            [height]="p.height"
+            [weight]="p.weight"
+            [types]="p.types"
+            [imgPokemonUrl]="p.sprites?.other?.dream_world?.front_default! || p.sprites?.front_default!"
+          ></app-card-pokemon>
+
+          <app-card-pokemon
+            *ngSwitchCase="'steel'"
+            [classForPokemonType]="'type-steel'"
+            [pokemonName]="p.name"
+            [height]="p.height"
+            [weight]="p.weight"
+            [types]="p.types"
+            [imgPokemonUrl]="p.sprites?.other?.dream_world?.front_default! || p.sprites?.front_default!"
+          ></app-card-pokemon>
+
+          <app-card-pokemon
+            *ngSwitchCase="'fire'"
+            [classForPokemonType]="'type-fire'"
+            [pokemonName]="p.name"
+            [height]="p.height"
+            [weight]="p.weight"
+            [types]="p.types"
+            [imgPokemonUrl]="p.sprites?.other?.dream_world?.front_default! || p.sprites?.front_default!"
+          ></app-card-pokemon>
+
+          <app-card-pokemon
+            *ngSwitchCase="'water'"
+            [classForPokemonType]="'type-water'"
+            [pokemonName]="p.name"
+            [height]="p.height"
+            [weight]="p.weight"
+            [types]="p.types"
+            [imgPokemonUrl]="p.sprites?.other?.dream_world?.front_default! || p.sprites?.front_default!"
+          ></app-card-pokemon>
+
+          <app-card-pokemon
+            *ngSwitchCase="'grass'"
+            [classForPokemonType]="'type-grass'"
+            [pokemonName]="p.name"
+            [height]="p.height"
+            [weight]="p.weight"
+            [types]="p.types"
+            [imgPokemonUrl]="p.sprites?.other?.dream_world?.front_default! || p.sprites?.front_default!"
+          ></app-card-pokemon>
+
+          <app-card-pokemon
+            *ngSwitchCase="'electric'"
+            [classForPokemonType]="'type-electric'"
+            [pokemonName]="p.name"
+            [height]="p.height"
+            [weight]="p.weight"
+            [types]="p.types"
+            [imgPokemonUrl]="p.sprites?.other?.dream_world?.front_default! || p.sprites?.front_default!"
+          ></app-card-pokemon>
+
+          <app-card-pokemon
+            *ngSwitchCase="'psychic'"
+            [classForPokemonType]="'type-psychic'"
+            [pokemonName]="p.name"
+            [height]="p.height"
+            [weight]="p.weight"
+            [types]="p.types"
+            [imgPokemonUrl]="p.sprites?.other?.dream_world?.front_default! || p.sprites?.front_default!"
+          ></app-card-pokemon>
+
+          <app-card-pokemon
+            *ngSwitchCase="'ice'"
+            [classForPokemonType]="'type-ice'"
+            [pokemonName]="p.name"
+            [height]="p.height"
+            [weight]="p.weight"
+            [types]="p.types"
+            [imgPokemonUrl]="p.sprites?.other?.dream_world?.front_default! || p.sprites?.front_default!"
+          ></app-card-pokemon>
+
+          <app-card-pokemon
+            *ngSwitchCase="'dragon'"
+            [classForPokemonType]="'type-dragon'"
+            [pokemonName]="p.name"
+            [height]="p.height"
+            [weight]="p.weight"
+            [types]="p.types"
+            [imgPokemonUrl]="p.sprites?.other?.dream_world?.front_default! || p.sprites?.front_default!"
+          ></app-card-pokemon>
+
+          <app-card-pokemon
+            *ngSwitchCase="'dark'"
+            [classForPokemonType]="'type-dark'"
+            [pokemonName]="p.name"
+            [height]="p.height"
+            [weight]="p.weight"
+            [types]="p.types"
+            [imgPokemonUrl]="p.sprites?.other?.dream_world?.front_default! || p.sprites?.front_default!"
+          ></app-card-pokemon>
+
+          <app-card-pokemon
+            *ngSwitchCase="'fairy'"
+            [classForPokemonType]="'type-fairy'"
+            [pokemonName]="p.name"
+            [height]="p.height"
+            [weight]="p.weight"
+            [types]="p.types"
+            [imgPokemonUrl]="p.sprites?.other?.dream_world?.front_default! || p.sprites?.front_default!"
+          ></app-card-pokemon>
+
+          <app-card-pokemon
+            *ngSwitchCase="'shadow'"
+            [classForPokemonType]="'type-shadow'"
+            [pokemonName]="p.name"
+            [height]="p.height"
+            [weight]="p.weight"
+            [types]="p.types"
+            [imgPokemonUrl]="p.sprites?.other?.dream_world?.front_default! || p.sprites?.front_default!"
+          ></app-card-pokemon>
+
+          <app-card-pokemon
+            *ngSwitchDefault
+            [pokemonName]="p.name"
+            [height]="p.height"
+            [weight]="p.weight"
+            [types]="p.types"
+            [imgPokemonUrl]="p.sprites?.other?.dream_world?.front_default! || p.sprites?.front_default!"
+          ></app-card-pokemon>
+        </ng-container>
+      </div>
+    </ng-container>
+  </div>
+</div>

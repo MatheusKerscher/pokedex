@@ -1,3 +1,5 @@
+import { NameAndUrl } from "../common/name-and-url.model";
+
 export class Pokemon {
   abilities?: Abilities[];
   base_experience?: number;
@@ -20,10 +22,6 @@ export class Pokemon {
   weight?: number;
 }
 
-export class NameAndUrl {
-  name?: string;
-  url?: string;
-}
 
 export class Abilities {
   ability?: NameAndUrl;

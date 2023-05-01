@@ -1,0 +1,35 @@
+<div class="pokemonCard">
+  <div
+    class="front d-flex justify-content-center align-items-center"
+    [ngClass]="classForPokemonType"
+  >
+    <div>
+      <img
+        [src]="imgPokemonUrl"
+        alt="Pokemon Photo"
+        loading="lazy"
+        width="170"
+        height="170"
+      />
+
+      <p class="pokemonName mb-0 mt-2">{{ pokemonName | titlecase }}</p>
+    </div>
+  </div>
+  <div
+    class="back d-flex justify-content-center align-items-center"
+    [ngClass]="classForPokemonType"
+  >
+    <div>
+      <p><strong>Altura:</strong> {{ (height! * 10) / 100 }}m</p>
+      <p><strong>Peso:</strong> {{ (weight! * 10) / 100 }}kg</p>
+      <p>
+        <strong>Tipo:</strong>
+        <ng-container *ngFor="let t of types; index as i">
+          {{
+            (t?.type?.name | titlecase) + (i + 1 == types?.length ? "" : ", ")
+          }}
+        </ng-container>
+      </p>
+    </div>
+  </div>
+</div>
