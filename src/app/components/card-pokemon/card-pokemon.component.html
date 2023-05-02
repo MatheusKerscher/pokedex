@@ -20,16 +20,77 @@
     [ngClass]="classForPokemonType"
   >
     <div>
-      <p><strong>Altura:</strong> {{ (height! * 10) / 100 }}m</p>
-      <p><strong>Peso:</strong> {{ (weight! * 10) / 100 }}kg</p>
-      <p>
-        <strong>Tipo:</strong>
-        <ng-container *ngFor="let t of types; index as i">
-          {{
-            (t?.type?.name | titlecase) + (i + 1 == types?.length ? "" : ", ")
-          }}
+      <p class="pokemonStats mb-1 mt-2">Estatísticas</p>
+
+      <div>
+        <p class="mb-0 d-flex align-items-center justify-content-between">
+          <span>Tipo </span>
+          <span>
+            <ng-container *ngFor="let t of types; index as i">
+              {{
+                (t?.type?.name | titlecase) +
+                  (i + 1 == types?.length ? "" : ", ")
+              }}
+            </ng-container>
+          </span>
+        </p>
+      </div>
+
+      <div>
+        <p class="mb-0 d-flex align-items-center justify-content-between">
+          <span>Altura </span> <span>{{ (height! * 10) / 100 }}m</span>
+        </p>
+      </div>
+
+      <div>
+        <p class="mb-0 d-flex align-items-center justify-content-between">
+          <span>Peso </span> <span>{{ (weight! * 10) / 100 }}kg</span>
+        </p>
+      </div>
+
+      <ng-container *ngFor="let s of pokemonStats">
+        <ng-container [ngSwitch]="s.stat?.name">
+          <div
+            *ngSwitchCase="'hp'"
+            class="d-flex align-items-center justify-content-between"
+          >
+            <p class="mb-0">HP</p>
+            <div class="pokemon-stats" [id]="pokemonId + 'hp'">
+              {{ setBackgoundGradiente(pokemonId + "hp", s.base_stat!) }}
+            </div>
+          </div>
+
+          <div
+            *ngSwitchCase="'attack'"
+            class="d-flex align-items-center justify-content-between"
+          >
+            <p class="mb-0">Ataque</p>
+            <div class="pokemon-stats" [id]="pokemonId + 'attack'">
+              {{ setBackgoundGradiente(pokemonId + "attack", s.base_stat!) }}
+            </div>
+          </div>
+
+          <div
+            *ngSwitchCase="'defense'"
+            class="d-flex align-items-center justify-content-between"
+          >
+            <p class="mb-0">Defesa</p>
+            <div class="pokemon-stats" [id]="pokemonId + 'defense'">
+              {{ setBackgoundGradiente(pokemonId + "defense", s.base_stat!) }}
+            </div>
+          </div>
+
+          <div
+            *ngSwitchCase="'speed'"
+            class="d-flex align-items-center justify-content-between"
+          >
+            <p class="mb-0 pe-1">Velocidade</p>
+            <div class="pokemon-stats" [id]="pokemonId + 'speed'">
+              {{ setBackgoundGradiente(pokemonId + "speed", s.base_stat!) }}
+            </div>
+          </div>
         </ng-container>
-      </p>
+      </ng-container>
     </div>
   </div>
 </div>

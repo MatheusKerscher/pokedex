@@ -114,4 +114,16 @@
 
 .back {
   transform: rotateY(180deg);
+
+  .pokemonStats {
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+  }
+}
+
+.pokemon-stats{
+  height: 12px;
+  border-radius: 15px;
+  width: 80px;
 }
