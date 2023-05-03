@@ -1,6 +1,22 @@
 <div class="container">
   <div class="w-100 row" *ngIf="pokemons.length > 0">
-    <ng-container *ngFor="let p of pokemons">
+    <pagination-controls
+      class="my-pagination"
+      (pageChange)="p = $event"
+      [responsive]="true"
+      previousLabel="Anterior"
+      nextLabel="Próximo"
+      screenReaderPaginationLabel="Pagination"
+      screenReaderPageLabel="Página"
+      screenReaderCurrentLabel="Você está na página"
+      >></pagination-controls
+    >
+
+    <ng-container
+      *ngFor="
+        let p of pokemons | paginate : { itemsPerPage: 30, currentPage: p }
+      "
+    >
       <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
         <ng-container [ngSwitch]="p?.types?.[0]?.type?.name">
           <app-card-pokemon
@@ -16,6 +32,7 @@
               p.sprites?.other?.dream_world?.front_default! ||
               p.sprites?.front_default!
             "
+            (emitterClick)="openModal(p)"
           ></app-card-pokemon>
 
           <app-card-pokemon
@@ -31,6 +48,7 @@
               p.sprites?.other?.dream_world?.front_default! ||
               p.sprites?.front_default!
             "
+            (emitterClick)="openModal(p)"
           ></app-card-pokemon>
 
           <app-card-pokemon
@@ -46,6 +64,7 @@
               p.sprites?.other?.dream_world?.front_default! ||
               p.sprites?.front_default!
             "
+            (emitterClick)="openModal(p)"
           ></app-card-pokemon>
 
           <app-card-pokemon
@@ -61,6 +80,7 @@
               p.sprites?.other?.dream_world?.front_default! ||
               p.sprites?.front_default!
             "
+            (emitterClick)="openModal(p)"
           ></app-card-pokemon>
 
           <app-card-pokemon
@@ -76,6 +96,7 @@
               p.sprites?.other?.dream_world?.front_default! ||
               p.sprites?.front_default!
             "
+            (emitterClick)="openModal(p)"
           ></app-card-pokemon>
 
           <app-card-pokemon
@@ -91,6 +112,7 @@
               p.sprites?.other?.dream_world?.front_default! ||
               p.sprites?.front_default!
             "
+            (emitterClick)="openModal(p)"
           ></app-card-pokemon>
 
           <app-card-pokemon
@@ -106,6 +128,7 @@
               p.sprites?.other?.dream_world?.front_default! ||
               p.sprites?.front_default!
             "
+            (emitterClick)="openModal(p)"
           ></app-card-pokemon>
 
           <app-card-pokemon
@@ -121,6 +144,7 @@
               p.sprites?.other?.dream_world?.front_default! ||
               p.sprites?.front_default!
             "
+            (emitterClick)="openModal(p)"
           ></app-card-pokemon>
 
           <app-card-pokemon
@@ -136,6 +160,7 @@
               p.sprites?.other?.dream_world?.front_default! ||
               p.sprites?.front_default!
             "
+            (emitterClick)="openModal(p)"
           ></app-card-pokemon>
 
           <app-card-pokemon
@@ -151,6 +176,7 @@
               p.sprites?.other?.dream_world?.front_default! ||
               p.sprites?.front_default!
             "
+            (emitterClick)="openModal(p)"
           ></app-card-pokemon>
 
           <app-card-pokemon
@@ -166,6 +192,7 @@
               p.sprites?.other?.dream_world?.front_default! ||
               p.sprites?.front_default!
             "
+            (emitterClick)="openModal(p)"
           ></app-card-pokemon>
 
           <app-card-pokemon
@@ -181,6 +208,7 @@
               p.sprites?.other?.dream_world?.front_default! ||
               p.sprites?.front_default!
             "
+            (emitterClick)="openModal(p)"
           ></app-card-pokemon>
 
           <app-card-pokemon
@@ -196,6 +224,7 @@
               p.sprites?.other?.dream_world?.front_default! ||
               p.sprites?.front_default!
             "
+            (emitterClick)="openModal(p)"
           ></app-card-pokemon>
 
           <app-card-pokemon
@@ -211,6 +240,7 @@
               p.sprites?.other?.dream_world?.front_default! ||
               p.sprites?.front_default!
             "
+            (emitterClick)="openModal(p)"
           ></app-card-pokemon>
 
           <app-card-pokemon
@@ -226,6 +256,7 @@
               p.sprites?.other?.dream_world?.front_default! ||
               p.sprites?.front_default!
             "
+            (emitterClick)="openModal(p)"
           ></app-card-pokemon>
 
           <app-card-pokemon
@@ -241,6 +272,7 @@
               p.sprites?.other?.dream_world?.front_default! ||
               p.sprites?.front_default!
             "
+            (emitterClick)="openModal(p)"
           ></app-card-pokemon>
 
           <app-card-pokemon
@@ -256,6 +288,7 @@
               p.sprites?.other?.dream_world?.front_default! ||
               p.sprites?.front_default!
             "
+            (emitterClick)="openModal(p)"
           ></app-card-pokemon>
 
           <app-card-pokemon
@@ -271,6 +304,7 @@
               p.sprites?.other?.dream_world?.front_default! ||
               p.sprites?.front_default!
             "
+            (emitterClick)="openModal(p)"
           ></app-card-pokemon>
 
           <app-card-pokemon
@@ -286,6 +320,7 @@
               p.sprites?.other?.dream_world?.front_default! ||
               p.sprites?.front_default!
             "
+            (emitterClick)="openModal(p)"
           ></app-card-pokemon>
 
           <app-card-pokemon
@@ -300,9 +335,21 @@
               p.sprites?.other?.dream_world?.front_default! ||
               p.sprites?.front_default!
             "
+            (emitterClick)="openModal(p)"
           ></app-card-pokemon>
         </ng-container>
       </div>
     </ng-container>
+
+    <pagination-controls
+      class="my-pagination"
+      (pageChange)="p = $event"
+      [responsive]="true"
+      previousLabel="Anterior"
+      nextLabel="Próximo"
+      screenReaderPaginationLabel="Pagination"
+      screenReaderPageLabel="Página"
+      screenReaderCurrentLabel="Você está na página"
+    ></pagination-controls>
   </div>
 </div>

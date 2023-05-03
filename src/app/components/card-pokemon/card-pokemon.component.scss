@@ -79,12 +79,12 @@
   &:hover {
     .front {
       transform: rotateY(-180deg);
-      transition: all 0.5s ease-in-out;
+      transition: all 1s ease-in-out;
     }
 
     .back {
       transform: rotateY(0deg);
-      transition: all 0.5s ease-in-out;
+      transition: all 1s ease-in-out;
     }
   }
 }
@@ -99,7 +99,8 @@
   border-radius: 15px;
   width: 200px;
   height: 250px;
-  transition: all 0.5s ease-in-out;
+  transition: all 1s ease-in-out;
+  cursor: pointer !important;
 }
 
 .front {

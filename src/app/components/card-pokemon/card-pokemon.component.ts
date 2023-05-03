@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Stats, Types } from 'src/app/shared/models/pokemon/pokemon.model';
 
 @Component({
@@ -15,6 +15,8 @@ export class CardPokemonComponent implements OnInit {
   @Input() imgPokemonUrl?: string;
   @Input() pokemonName?: string;
   @Input() pokemonStats?: Stats[];
+
+  @Output() emitterClick = new EventEmitter();
 
   constructor() {}
 
@@ -140,5 +142,9 @@ export class CardPokemonComponent implements OnInit {
     }
 
     element.style.background = gradientBackground;
+  }
+
+  emmiterClick(){
+    this.emitterClick.emit()
   }
 }
