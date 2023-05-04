@@ -1,4 +1,4 @@
-import { NameAndUrl } from "../common/name-and-url.model";
+import { NameAndUrl } from "../common/name-and-url/name-and-url.model";
 
 export class Pokemon {
   abilities?: Abilities[];

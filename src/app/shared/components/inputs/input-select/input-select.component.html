@@ -1,0 +1,15 @@
+<div [formGroup]="formGroup" class="mb-3">
+  <app-label [forId]="controlName" [textLabel]="textLabel"></app-label>
+  <select
+    id="{{ controlName }}"
+    [formControlName]="controlName"
+    class="select mt-2"
+    (change)="emitterClick()"
+  >
+    <ng-container *ngFor="let l of list">
+      <option [selected]="l.selected" [value]="l.value">
+        {{ l.label }}
+      </option>
+    </ng-container>
+  </select>
+</div>

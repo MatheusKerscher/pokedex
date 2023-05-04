@@ -35,6 +35,31 @@ button {
 
 // Estilo para o ngx pagination
 pagination-template {
+  .ngx-pagination .pagination-next a:after,
+  .ngx-pagination .pagination-next.disabled:after {
+    content: url(assets/imgs/ngx-pagination-icons/angle-right-solid.svg);
+    display: inline-block;
+    margin-left: 0.5rem;
+    width: 7px;
+    height: 7px;
+  }
+  .ngx-pagination .pagination-next.disabled:after {
+    content: url(assets/imgs/ngx-pagination-icons/angle-right-solid-disabled.svg) !important;
+  }
+
+  .ngx-pagination .pagination-previous a:before,
+  .ngx-pagination .pagination-previous.disabled:before {
+    content: url(assets/imgs/ngx-pagination-icons/angle-left-solid.svg);
+    display: inline-block;
+    margin-right: 0.5rem;
+    width: 7px;
+    height: 7px;
+  }
+
+  .ngx-pagination .pagination-previous.disabled:before {
+    content: url(assets/imgs/ngx-pagination-icons/angle-left-solid-disabled.svg) !important;
+  }
+
   .current {
     background-color: #ff0000 !important;
     border-radius: 8px !important;

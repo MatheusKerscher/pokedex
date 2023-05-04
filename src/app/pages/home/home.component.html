@@ -1,5 +1,15 @@
 <div class="container">
   <div class="w-100 row" *ngIf="pokemons.length > 0">
+    <form [formGroup]="formPokemonType">
+      <app-input-select
+        [textLabel]="'Selecione o tipo do pokemon'"
+        [formGroup]="formPokemonType"
+        [controlName]="'type'"
+        [list]="types"
+        (emmiterClick)="pokemonsFilter()"
+      ></app-input-select>
+    </form>
+
     <pagination-controls
       class="my-pagination"
       (pageChange)="p = $event"
@@ -9,8 +19,7 @@
       screenReaderPaginationLabel="Pagination"
       screenReaderPageLabel="Página"
       screenReaderCurrentLabel="Você está na página"
-      >></pagination-controls
-    >
+    ></pagination-controls>
 
     <ng-container
       *ngFor="
@@ -30,7 +39,8 @@
             [types]="p.types"
             [imgPokemonUrl]="
               p.sprites?.other?.dream_world?.front_default! ||
-              p.sprites?.front_default!
+              p.sprites?.front_default! ||
+              p.sprites?.front_shiny!
             "
             (emitterClick)="openModal(p)"
           ></app-card-pokemon>
@@ -46,7 +56,8 @@
             [types]="p.types"
             [imgPokemonUrl]="
               p.sprites?.other?.dream_world?.front_default! ||
-              p.sprites?.front_default!
+              p.sprites?.front_default! ||
+              p.sprites?.front_shiny!
             "
             (emitterClick)="openModal(p)"
           ></app-card-pokemon>
@@ -62,7 +73,8 @@
             [types]="p.types"
             [imgPokemonUrl]="
               p.sprites?.other?.dream_world?.front_default! ||
-              p.sprites?.front_default!
+              p.sprites?.front_default! ||
+              p.sprites?.front_shiny!
             "
             (emitterClick)="openModal(p)"
           ></app-card-pokemon>
@@ -78,7 +90,8 @@
             [types]="p.types"
             [imgPokemonUrl]="
               p.sprites?.other?.dream_world?.front_default! ||
-              p.sprites?.front_default!
+              p.sprites?.front_default! ||
+              p.sprites?.front_shiny!
             "
             (emitterClick)="openModal(p)"
           ></app-card-pokemon>
@@ -94,7 +107,8 @@
             [types]="p.types"
             [imgPokemonUrl]="
               p.sprites?.other?.dream_world?.front_default! ||
-              p.sprites?.front_default!
+              p.sprites?.front_default! ||
+              p.sprites?.front_shiny!
             "
             (emitterClick)="openModal(p)"
           ></app-card-pokemon>
@@ -110,7 +124,8 @@
             [types]="p.types"
             [imgPokemonUrl]="
               p.sprites?.other?.dream_world?.front_default! ||
-              p.sprites?.front_default!
+              p.sprites?.front_default! ||
+              p.sprites?.front_shiny!
             "
             (emitterClick)="openModal(p)"
           ></app-card-pokemon>
@@ -126,7 +141,8 @@
             [types]="p.types"
             [imgPokemonUrl]="
               p.sprites?.other?.dream_world?.front_default! ||
-              p.sprites?.front_default!
+              p.sprites?.front_default! ||
+              p.sprites?.front_shiny!
             "
             (emitterClick)="openModal(p)"
           ></app-card-pokemon>
@@ -142,7 +158,8 @@
             [types]="p.types"
             [imgPokemonUrl]="
               p.sprites?.other?.dream_world?.front_default! ||
-              p.sprites?.front_default!
+              p.sprites?.front_default! ||
+              p.sprites?.front_shiny!
             "
             (emitterClick)="openModal(p)"
           ></app-card-pokemon>
@@ -158,7 +175,8 @@
             [types]="p.types"
             [imgPokemonUrl]="
               p.sprites?.other?.dream_world?.front_default! ||
-              p.sprites?.front_default!
+              p.sprites?.front_default! ||
+              p.sprites?.front_shiny!
             "
             (emitterClick)="openModal(p)"
           ></app-card-pokemon>
@@ -174,7 +192,8 @@
             [types]="p.types"
             [imgPokemonUrl]="
               p.sprites?.other?.dream_world?.front_default! ||
-              p.sprites?.front_default!
+              p.sprites?.front_default! ||
+              p.sprites?.front_shiny!
             "
             (emitterClick)="openModal(p)"
           ></app-card-pokemon>
@@ -190,7 +209,8 @@
             [types]="p.types"
             [imgPokemonUrl]="
               p.sprites?.other?.dream_world?.front_default! ||
-              p.sprites?.front_default!
+              p.sprites?.front_default! ||
+              p.sprites?.front_shiny!
             "
             (emitterClick)="openModal(p)"
           ></app-card-pokemon>
@@ -206,7 +226,8 @@
             [types]="p.types"
             [imgPokemonUrl]="
               p.sprites?.other?.dream_world?.front_default! ||
-              p.sprites?.front_default!
+              p.sprites?.front_default! ||
+              p.sprites?.front_shiny!
             "
             (emitterClick)="openModal(p)"
           ></app-card-pokemon>
@@ -222,7 +243,8 @@
             [types]="p.types"
             [imgPokemonUrl]="
               p.sprites?.other?.dream_world?.front_default! ||
-              p.sprites?.front_default!
+              p.sprites?.front_default! ||
+              p.sprites?.front_shiny!
             "
             (emitterClick)="openModal(p)"
           ></app-card-pokemon>
@@ -238,7 +260,8 @@
             [types]="p.types"
             [imgPokemonUrl]="
               p.sprites?.other?.dream_world?.front_default! ||
-              p.sprites?.front_default!
+              p.sprites?.front_default! ||
+              p.sprites?.front_shiny!
             "
             (emitterClick)="openModal(p)"
           ></app-card-pokemon>
@@ -254,7 +277,8 @@
             [types]="p.types"
             [imgPokemonUrl]="
               p.sprites?.other?.dream_world?.front_default! ||
-              p.sprites?.front_default!
+              p.sprites?.front_default! ||
+              p.sprites?.front_shiny!
             "
             (emitterClick)="openModal(p)"
           ></app-card-pokemon>
@@ -270,7 +294,8 @@
             [types]="p.types"
             [imgPokemonUrl]="
               p.sprites?.other?.dream_world?.front_default! ||
-              p.sprites?.front_default!
+              p.sprites?.front_default! ||
+              p.sprites?.front_shiny!
             "
             (emitterClick)="openModal(p)"
           ></app-card-pokemon>
@@ -286,7 +311,8 @@
             [types]="p.types"
             [imgPokemonUrl]="
               p.sprites?.other?.dream_world?.front_default! ||
-              p.sprites?.front_default!
+              p.sprites?.front_default! ||
+              p.sprites?.front_shiny!
             "
             (emitterClick)="openModal(p)"
           ></app-card-pokemon>
@@ -302,7 +328,8 @@
             [types]="p.types"
             [imgPokemonUrl]="
               p.sprites?.other?.dream_world?.front_default! ||
-              p.sprites?.front_default!
+              p.sprites?.front_default! ||
+              p.sprites?.front_shiny!
             "
             (emitterClick)="openModal(p)"
           ></app-card-pokemon>
@@ -318,7 +345,8 @@
             [types]="p.types"
             [imgPokemonUrl]="
               p.sprites?.other?.dream_world?.front_default! ||
-              p.sprites?.front_default!
+              p.sprites?.front_default! ||
+              p.sprites?.front_shiny!
             "
             (emitterClick)="openModal(p)"
           ></app-card-pokemon>
@@ -333,7 +361,8 @@
             [types]="p.types"
             [imgPokemonUrl]="
               p.sprites?.other?.dream_world?.front_default! ||
-              p.sprites?.front_default!
+              p.sprites?.front_default! ||
+              p.sprites?.front_shiny!
             "
             (emitterClick)="openModal(p)"
           ></app-card-pokemon>

@@ -6,6 +6,11 @@
   >
     <div>
       <img
+        *ngIf="
+          imgPokemonUrl != null &&
+          imgPokemonUrl != undefined &&
+          imgPokemonUrl != ''
+        "
         [src]="imgPokemonUrl"
         alt="Pokemon Photo"
         loading="lazy"
