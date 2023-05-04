@@ -1,0 +1,22 @@
+<div [formGroup]="formGroup" class="mb-3">
+  <app-label
+    *ngIf="textLabel != undefined && textLabel != '' && textLabel != null"
+    [forId]="controlName"
+    [textLabel]="textLabel!"
+  ></app-label>
+
+  <div class="d-flex align-items-end">
+    <input
+      type="text"
+      id="{{ controlName }}"
+      [placeholder]="placeholder"
+      [formControlName]="controlName"
+      class="input-basic input-search mt-2"
+      (keyup)="emitterClick()"
+    />
+
+    <button type="submit" class="btn-basic btn-search" (click)="emitterClick()">
+      <fa-icon [icon]="faSearch"></fa-icon>
+    </button>
+  </div>
+</div>

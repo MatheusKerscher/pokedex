@@ -26,6 +26,26 @@ button {
   font-family: var(--font-family) !important;
 }
 
+.input-basic {
+  border: 1px solid #000;
+  height: 40px;
+  outline: none;
+  padding: 0 10px;
+  width: 100%;
+  transition: 0.2s ease-in-out;
+
+  &:focus {
+    border-width: 2px;
+  }
+}
+.btn-basic {
+  border: none;
+  font-weight: 500;
+  height: 40px;
+  padding: 8px;
+  width: 100%;
+}
+
 // Estilo para os modais
 .modal-content {
   border: none !important;

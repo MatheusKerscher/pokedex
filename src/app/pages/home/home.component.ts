@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PokeapiService } from '../services/pokeapi/pokeapi.service';
 import { ModalDetailsComponent } from 'src/app/components/modal-details/modal-details.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Pokemon } from 'src/app/shared/models/pokemon/pokemon.model';
 import { SelectOption } from 'src/app/shared/models/common/select-option/select-option.model';
 
@@ -15,6 +15,9 @@ export class HomeComponent implements OnInit {
   p: number = 1;
   result: Pokemon[] = [];
   pokemons: Pokemon[] = [];
+
+  private typeAux: string = 'all';
+  private nameAux: string = '';
 
   types: SelectOption[] = [
     { value: 'all', label: 'Todos', selected: true },
@@ -40,7 +43,11 @@ export class HomeComponent implements OnInit {
   ];
 
   public formPokemonType: FormGroup = new FormGroup({
-    type: new FormControl(null),
+    type: new FormControl(null, Validators.required),
+  });
+
+  public formPokemonName: FormGroup = new FormGroup({
+    name: new FormControl(null, Validators.required),
   });
 
   constructor(
@@ -63,11 +70,15 @@ export class HomeComponent implements OnInit {
     modalRef.componentInstance.pokemon = p;
   }
 
-  pokemonsFilter() {
+  filterPokemonByType() {
     const type = this.formPokemonType.get('type')?.value;
 
     if (type != null) {
       this.p = 1;
+
+      if (type != this.typeAux) {
+        this.formPokemonName.get('name')?.setValue('');
+      }
 
       if (type == 'all') {
         this.pokemons = this.result;
@@ -79,5 +90,41 @@ export class HomeComponent implements OnInit {
     } else {
       this.pokemons = this.result;
     }
+
+    this.typeAux = type;
+  }
+
+  filterPokemonByName() {
+    const name = this.formPokemonName.get('name')?.value;
+    const type = this.formPokemonType.get('type')?.value;
+
+    if (name != null && type != null) {
+      this.p = 1;
+
+      if (name == '' && type == 'all') {
+        this.pokemons = this.result;
+      } else if (name != '' && type != 'all') {
+        if (this.nameAux != name) {
+          this.filterPokemonByType();
+        }
+        this.pokemons = this.pokemons.filter((p) => {
+          return p.name?.includes(name.toLowerCase());
+        });
+      } else if (name == '' && type != 'all') {
+        this.filterPokemonByType();
+      } else if (name != '') {
+        if (this.nameAux != name) {
+          this.filterPokemonByType();
+        }
+
+        this.pokemons = this.pokemons.filter((p) => {
+          return p.name?.includes(name.toLowerCase());
+        });
+      } else {
+        this.pokemons = this.result;
+      }
+    }
+
+    this.nameAux = name;
   }
 }

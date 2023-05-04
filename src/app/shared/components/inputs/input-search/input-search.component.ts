@@ -1,26 +1,26 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup } from '@angular/forms';
-import { SelectOption } from 'src/app/shared/models/common/select-option/select-option.model';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-input-select',
-  templateUrl: './input-select.component.html',
-  styleUrls: ['./input-select.component.scss'],
+  selector: 'app-input-search',
+  templateUrl: './input-search.component.html',
+  styleUrls: ['./input-search.component.scss'],
 })
-export class InputSelectComponent implements OnInit {
+export class InputSearchComponent implements OnInit {
   @Input() formGroup: FormGroup = new FormGroup({});
   @Input() controlName: string = '';
   @Input() validacaoInput: boolean = false;
-  @Input() list: SelectOption[] = [];
-  @Input() textLabel?: any;
+  @Input() textLabel?: string;
+  @Input() placeholder?: string;
 
   @Output() emmiterClick = new EventEmitter();
+
+  faSearch = faMagnifyingGlass;
 
   constructor() {}
 
   ngOnInit(): void {
-    const selectedOption = this.list.find((option) => option.selected);
-    this.formGroup.controls[this.controlName].setValue(selectedOption?.value);
   }
 
   emitterClick() {

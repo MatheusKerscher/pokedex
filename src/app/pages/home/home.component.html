@@ -1,4 +1,13 @@
 <div class="container">
+  <form [formGroup]="formPokemonName">
+    <app-input-search
+      [formGroup]="formPokemonName"
+      [controlName]="'name'"
+      [placeholder]="'Digite o nome do pokemon...'"
+      (emmiterClick)="filterPokemonByName()"
+    ></app-input-search>
+  </form>
+
   <div class="w-100 row" *ngIf="pokemons.length > 0">
     <form [formGroup]="formPokemonType">
       <app-input-select
@@ -6,7 +15,7 @@
         [formGroup]="formPokemonType"
         [controlName]="'type'"
         [list]="types"
-        (emmiterClick)="pokemonsFilter()"
+        (emmiterClick)="filterPokemonByType()"
       ></app-input-select>
     </form>
 
