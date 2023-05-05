@@ -5,6 +5,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Pokemon } from 'src/app/shared/models/pokemon/pokemon.model';
 import { SelectOption } from 'src/app/shared/models/common/select-option/select-option.model';
+import { faRotateRight } from '@fortawesome/free-solid-svg-icons';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-home',
@@ -15,6 +17,9 @@ export class HomeComponent implements OnInit {
   p: number = 1;
   result: Pokemon[] = [];
   pokemons: Pokemon[] = [];
+  haveError: boolean = false;
+
+  faReload = faRotateRight;
 
   private typeAux: string = 'all';
   private nameAux: string = '';
@@ -29,8 +34,8 @@ export class HomeComponent implements OnInit {
     { value: 'fighting', label: 'Fighting', selected: false },
     { value: 'fire', label: 'Fire', selected: false },
     { value: 'flying', label: 'Flying', selected: false },
-    { value: 'grass', label: 'Grass', selected: false },
     { value: 'ghost', label: 'Ghost', selected: false },
+    { value: 'grass', label: 'Grass', selected: false },
     { value: 'ground', label: 'Ground', selected: false },
     { value: 'ice', label: 'Ice', selected: false },
     { value: 'normal', label: 'Normal', selected: false },
@@ -52,13 +57,29 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private pokeapiService: PokeapiService,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private ngxUiLoaderService: NgxUiLoaderService
   ) {}
 
   ngOnInit(): void {
-    this.pokeapiService.getPokemons().subscribe((result) => {
-      this.result = result;
-      this.pokemons = result;
+    this.populate();
+  }
+
+  populate() {
+    this.ngxUiLoaderService.startLoader('loader-01');
+    this.pokeapiService.getPokemons().subscribe({
+      next: (result) => {
+        this.result = result;
+        this.pokemons = result;
+        this.haveError = false;
+        this.ngxUiLoaderService.stopLoader('loader-01');
+      },
+
+      error: (err) => {
+        console.log(err);
+        this.haveError = true;
+        this.ngxUiLoaderService.stopLoader('loader-01');
+      },
     });
   }
 

@@ -1,3 +1,261 @@
 <div class="modal-body">
- 
+  <div class="d-flex justify-content-between">
+    <div *ngIf="pokemon != undefined" class="d-flex justify-content-start">
+      <ng-container *ngFor="let i of pokemon.types">
+        <ng-container [ngSwitch]="i.type?.name">
+          <div class="me-1" *ngSwitchCase="'bug'">
+            <img
+              src="../../../assets/imgs/pokemon-types/type-bug.webp"
+              loading="lazy"
+              alt="pokemon type bug"
+              width="30"
+              height="30"
+            />
+          </div>
+
+          <div class="me-1" *ngSwitchCase="'dark'">
+            <img
+              src="../../../assets/imgs/pokemon-types/type-dark.webp"
+              loading="lazy"
+              alt="pokemon type dark"
+              width="30"
+              height="30"
+            />
+          </div>
+
+          <div class="me-1" *ngSwitchCase="'dragon'">
+            <img
+              src="../../../assets/imgs/pokemon-types/type-dragon.webp"
+              loading="lazy"
+              alt="pokemon type dragon"
+              width="30"
+              height="30"
+            />
+          </div>
+
+          <div class="me-1" *ngSwitchCase="'electric'">
+            <img
+              src="../../../assets/imgs/pokemon-types/type-electric.webp"
+              loading="lazy"
+              alt="pokemon type electric"
+              width="30"
+              height="30"
+            />
+          </div>
+
+          <div class="me-1" *ngSwitchCase="'fairy'">
+            <img
+              src="../../../assets/imgs/pokemon-types/type-fairy.webp"
+              loading="lazy"
+              alt="pokemon type fairy"
+              width="30"
+              height="30"
+            />
+          </div>
+
+          <div class="me-1" *ngSwitchCase="'fighting'">
+            <img
+              src="../../../assets/imgs/pokemon-types/type-fighting.webp"
+              loading="lazy"
+              alt="pokemon type fighting"
+              width="30"
+              height="30"
+            />
+          </div>
+
+          <div class="me-1" *ngSwitchCase="'fire'">
+            <img
+              src="../../../assets/imgs/pokemon-types/type-fire.webp"
+              loading="lazy"
+              alt="pokemon type fire"
+              width="30"
+              height="30"
+            />
+          </div>
+
+          <div class="me-1" *ngSwitchCase="'flying'">
+            <img
+              src="../../../assets/imgs/pokemon-types/type-flying.webp"
+              loading="lazy"
+              alt="pokemon type flying"
+              width="30"
+              height="30"
+            />
+          </div>
+
+          <div class="me-1" *ngSwitchCase="'ghost'">
+            <img
+              src="../../../assets/imgs/pokemon-types/type-ghost.webp"
+              loading="lazy"
+              alt="pokemon type ghost"
+              width="30"
+              height="30"
+            />
+          </div>
+
+          <div class="me-1" *ngSwitchCase="'grass'">
+            <img
+              src="../../../assets/imgs/pokemon-types/type-grass.webp"
+              loading="lazy"
+              alt="pokemon type grass"
+              width="30"
+              height="30"
+            />
+          </div>
+
+          <div class="me-1" *ngSwitchCase="'ground'">
+            <img
+              src="../../../assets/imgs/pokemon-types/type-ground.webp"
+              loading="lazy"
+              alt="pokemon type ground"
+              width="30"
+              height="30"
+            />
+          </div>
+
+          <div class="me-1" *ngSwitchCase="'ice'">
+            <img
+              src="../../../assets/imgs/pokemon-types/type-ice.webp"
+              loading="lazy"
+              alt="pokemon type ice"
+              width="30"
+              height="30"
+            />
+          </div>
+
+          <div class="me-1" *ngSwitchCase="'normal'">
+            <img
+              src="../../../assets/imgs/pokemon-types/type-normal.webp"
+              loading="lazy"
+              alt="pokemon type normal"
+              width="30"
+              height="30"
+            />
+          </div>
+
+          <div class="me-1" *ngSwitchCase="'poison'">
+            <img
+              src="../../../assets/imgs/pokemon-types/type-poison.webp"
+              loading="lazy"
+              alt="pokemon type poison"
+              width="30"
+              height="30"
+            />
+          </div>
+
+          <div class="me-1" *ngSwitchCase="'psychic'">
+            <img
+              src="../../../assets/imgs/pokemon-types/type-psychic.webp"
+              loading="lazy"
+              alt="pokemon type psychic"
+              width="30"
+              height="30"
+            />
+          </div>
+
+          <div class="me-1" *ngSwitchCase="'rock'">
+            <img
+              src="../../../assets/imgs/pokemon-types/type-rock.webp"
+              loading="lazy"
+              alt="pokemon type rock"
+              width="30"
+              height="30"
+            />
+          </div>
+
+          <div class="me-1" *ngSwitchCase="'steel'">
+            <img
+              src="../../../assets/imgs/pokemon-types/type-steel.webp"
+              loading="lazy"
+              alt="pokemon type steel"
+              width="30"
+              height="30"
+            />
+          </div>
+
+          <div class="me-1" *ngSwitchCase="'water'">
+            <img
+              src="../../../assets/imgs/pokemon-types/type-water.webp"
+              loading="lazy"
+              alt="pokemon type water"
+              width="30"
+              height="30"
+            />
+          </div>
+        </ng-container>
+      </ng-container>
+    </div>
+
+    <div>
+      <button class="btn-close-modal" (click)="activeModal.dismiss()">
+        <fa-icon [icon]="faClose"></fa-icon>
+      </button>
+    </div>
+  </div>
+
+  <div
+    *ngIf="pokemon != undefined"
+    class="d-block d-md-flex align-items-center"
+  >
+    <div class="text-center">
+      <img
+        *ngIf="imgPokemonUrl != ''"
+        [src]="imgPokemonUrl"
+        alt="Pokemon Photo"
+        loading="lazy"
+        width="170"
+        height="170"
+      />
+    </div>
+
+    <div class="ms-0 ms-md-3">
+      <p class="pokemonName my-2">{{ pokemon.name | titlecase }}</p>
+      <div>
+        <div
+          class="d-flex align-items-center justify-content-center justify-content-md-start"
+        >
+          <p class="mb-0">
+            <strong>Altura: </strong> <span>{{ pokemon.height! / 100 }}m</span>
+          </p>
+
+          <p class="mb-0 mx-1">|</p>
+
+          <p class="mb-0">
+            <strong>Peso: </strong>
+            <span>{{ (pokemon.weight! * 10) / 100 }}kg</span>
+          </p>
+        </div>
+
+        <p class="mb-0 text-center text-md-start">
+          <strong>Tipo: </strong>
+          <span>
+            <ng-container *ngFor="let t of pokemon.types; index as i">
+              {{
+                (t?.type?.name | titlecase) +
+                  (i + 1 == pokemon.types?.length ? "" : ", ")
+              }}
+            </ng-container>
+          </span>
+        </p>
+      </div>
+
+      <div>
+        <p class="mb-0 text-center text-md-start">
+          <strong
+            >{{
+              pokemon.abilities?.length == 1 ? "Habilidade" : "Habilidadaes"
+            }}:</strong
+          >
+          <span>
+            <ng-container *ngFor="let a of pokemon.abilities; index as i">
+              {{
+                (a.ability?.name | titlecase) +
+                  (i + 1 == pokemon.abilities?.length ? "" : ", ")
+              }}
+            </ng-container>
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
 </div>

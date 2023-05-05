@@ -1,0 +1,18 @@
+.pokemonName {
+  font-weight: 500;
+  font-size: 24px;
+  text-align: center;
+}
+
+.btn-close-modal{
+  border: none !important;
+  outline: none !important;
+  background-color: transparent;
+  font-size: 18px;
+  transition: 0.5s ease-in-out;
+
+  &:hover{
+    transition: 0.5s ease-in-out;
+    transform: scale(1.05);
+  }
+}

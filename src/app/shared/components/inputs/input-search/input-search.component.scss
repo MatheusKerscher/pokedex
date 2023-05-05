@@ -1,12 +1,28 @@
 .input-search {
-  width: 95% !important;
+  width: 90% !important;
   border-radius: 10px 0 0 10px;
   border: 1px solid #ff0000;
+  transition: 0.5s ease-in-out;
+
+  &:focus {
+    transition: 0.5s ease-in-out;
+    border-width: 2px;
+  }
 }
 
 .btn-search {
-  width: 5% !important;
+  width: 10% !important;
   border-radius: 0 10px 10px 0;
   background-color: #ff0000;
   color: #ffffff;
+}
+
+@media screen and (min-width: 1024px) {
+  .input-search {
+    width: 95% !important;
+  }
+
+  .btn-search {
+    width: 5% !important;
+  }
 }
