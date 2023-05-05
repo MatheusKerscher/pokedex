@@ -43,7 +43,7 @@ Para desenvolver esse site as seguintes tecnologias foram utilizadas:
 - [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript);
 - [HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML);
 - [SASS](https://sass-lang.com/);
-- [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+- [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS);
 - [TypeScript](https://www.typescriptlang.org/);
 - [Angular Bootstrap](https://ng-bootstrap.github.io/#/home);
 - [Angular Fontawesome](https://www.npmjs.com/package/@fortawesome/angular-fontawesome);
