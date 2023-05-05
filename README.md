@@ -87,15 +87,16 @@ Além disso é possível buscar um pokémon pelo seu nome e filtar os pokémons 
 
 Para finalizar, o site também é responsivo. A seguir é possível visualizar algumas imagens do site tanto na versão desktop como na versão mobile (essa versão foi simulada alterando o tamanho na tela do navegador).
 
-![Home](/src/assets/printscreen/home-responsivo-1.png)
-![Home](/src/assets/printscreen/home-responsivo-2.png)
-![Home](/src/assets/printscreen/home-responsivo-3.png)
-![Home](/src/assets/printscreen/home-responsivo-4.png)
-
+![Home](/src/assets/printscreen/home-pesquisa.gif)
 ![Home](/src/assets/printscreen/home-1.png)
 ![Home](/src/assets/printscreen/home-2.png)
 ![Home](/src/assets/printscreen/home-3.png)
 ![Home](/src/assets/printscreen/home-4.png)
 ![Home](/src/assets/printscreen/home-5.png)
 ![Home](/src/assets/printscreen/home-6.png)
-![Home](/src/assets/printscreen/home-pesquisa.gif)
+
+![Home](/src/assets/printscreen/home-responsivo-1.png)
+![Home](/src/assets/printscreen/home-responsivo-2.png)
+![Home](/src/assets/printscreen/home-responsivo-3.png)
+![Home](/src/assets/printscreen/home-responsivo-4.png)
+
