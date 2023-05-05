@@ -1,27 +1,101 @@
-# Pokedex
+# Pokédex
+Ao realizar o desenvolvimento desse aplicativo foi possível aprimorar meus conhecimentos sobre Angular, TypeScript, JavaScript, HTML, SASS, CSS, Bootstrap e consumo de API.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.2.
+## Instalação e uso
 
-## Development server
+1. Instalar [Node.Js](https://nodejs.org/en) e NPM
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+2. Instalar o Angular CLI
 
-## Code scaffolding
+```sh
+npm install -g @angular/cli
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+4. Clone esse repositório e acesse a pasta
 
-## Build
+```sh
+git clone https://github.com/MatheusKerscher/pokedex.git
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+cd pokedex/
+```
 
-## Running unit tests
+4. Instale os pacotes NPM
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```sh
 
-## Running end-to-end tests
+npm install
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```
 
-## Further help
+5. Executar o projeto
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```sh
+
+ng s -o
+
+```
+
+## Tecnologias Utilizadas
+
+Para desenvolver esse site as seguintes tecnologias foram utilizadas:
+- [Angular](https://angular.io/);
+- [Bootstrap](https://getbootstrap.com/);
+- [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript);
+- [HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML);
+- [SASS](https://sass-lang.com/);
+- [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+- [TypeScript](https://www.typescriptlang.org/);
+- [Angular Bootstrap](https://ng-bootstrap.github.io/#/home);
+- [Angular Fontawesome](https://www.npmjs.com/package/@fortawesome/angular-fontawesome);
+- [PokéAPI](https://pokeapi.co/).
+
+## Como o site funciona
+
+O site apresenta um conjunto de cartões com dados dos pokémons fornecidos pela [PokéAPI](https://pokeapi.co/). Na frente do cartão você verá a foto e o nome do pokémon, ao passar o mouse sobre o cartão ele vira e você poderá visualizar o verso dele ontem é apresentado algumas informações sobre o pokémon, informações como:
+
+- Tipo;
+- Altura;
+- Peso;
+- HP;
+- Ataque; 
+- Defesa;
+- Velocidade.
+
+Ao clicar no card você terá acesso a mais informações sobre o pokémon. Por exemplo, visualizar as habilidades do pokémon.
+
+Além disso é possível buscar um pokémon pelo seu nome e filtar os pokémons pelo tipo. Os tipos disponíveis para fazer a filtragem são:
+
+- Todos (opção que vem selecionada por default, ela exite a lista completa dos pokémons);
+- Bug;
+- Dark;
+- Dragon;
+- Electric;
+- Fairy;
+- Fighting;
+- Fire;
+- Flying;
+- Ghost;
+- Grass;
+- Ground;
+- Ice;
+- Normal;
+- Poison;
+- Psychic;
+- Rock;
+- Steel;
+- Water.
+
+Para finalizar, o site também é responsivo. A seguir é possível visualizar algumas imagens do site tanto na versão desktop como na versão mobile (essa versão foi simulada alterando o tamanho na tela do navegador).
+
+![Home](/src/assets/printscreen/home-responsivo-1.png)
+![Home](/src/assets/printscreen/home-responsivo-2.png)
+![Home](/src/assets/printscreen/home-responsivo-3.png)
+![Home](/src/assets/printscreen/home-responsivo-4.png)
+
+![Home](/src/assets/printscreen/home-1.png)
+![Home](/src/assets/printscreen/home-2.png)
+![Home](/src/assets/printscreen/home-3.png)
+![Home](/src/assets/printscreen/home-4.png)
+![Home](/src/assets/printscreen/home-5.png)
+![Home](/src/assets/printscreen/home-6.png)
+![Home](/src/assets/printscreen/home-pesquisa.gif)

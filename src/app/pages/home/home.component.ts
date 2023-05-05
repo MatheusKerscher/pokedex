@@ -43,7 +43,6 @@ export class HomeComponent implements OnInit {
     { value: 'psychic', label: 'Psychic', selected: false },
     { value: 'rock', label: 'Rock', selected: false },
     { value: 'steel', label: 'Steel', selected: false },
-    { value: 'shadow', label: 'Shadow', selected: false },
     { value: 'water', label: 'Water', selected: false },
   ];
 
