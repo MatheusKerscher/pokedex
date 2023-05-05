@@ -51,7 +51,7 @@ Para desenvolver esse site as seguintes tecnologias foram utilizadas:
 
 ## Como o site funciona
 
-O site apresenta um conjunto de cartões com dados dos pokémons fornecidos pela [PokéAPI](https://pokeapi.co/). Na frente do cartão você verá a foto e o nome do pokémon, ao passar o mouse sobre o cartão ele vira e você poderá visualizar o verso dele ontem é apresentado algumas informações sobre o pokémon, informações como:
+O site apresenta um conjunto de cartões com dados dos pokémons fornecidos pela [PokéAPI](https://pokeapi.co/). Na frente do cartão você verá a foto e o nome do pokémon, ao passar o mouse sobre o cartão ele vira e você poderá visualizar o verso dele onde são apresentadas algumas informações, tais como:
 
 - Tipo;
 - Altura;
